@@ -63,7 +63,7 @@ def __main__():
                         origin_audio_path = os.path.join(audio_dir, f'{instance_name}.wav')
                         target_audio_path = os.path.join('Audio', f'Ses0{ses_num}', f'{instance_name}-{label}.wav')
                         shutil.copy(origin_audio_path, target_audio_path)
-                        df.loc[len(df.index)] = [instance_name, text, start, end, ses_num, label]
+                        df.loc[len(df.index)] = [instance_name, text, start, end, 'Ses0{ses_num}', label]
     df.to_csv('./summary.tsv', sep="\t", index=False)
 
 
